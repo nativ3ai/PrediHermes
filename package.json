@@ -1,0 +1,40 @@
+{
+  "name": "predihermes",
+  "version": "0.1.0",
+  "description": "PrediHermes installer + compatibility tooling for Hermes skill setup",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nativ3ai/PrediHermes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nativ3ai/PrediHermes/issues"
+  },
+  "homepage": "https://github.com/nativ3ai/PrediHermes#readme",
+  "bin": {
+    "predihermes": "bin/predihermes-skill.js",
+    "predihermes-skill": "bin/predihermes-skill.js"
+  },
+  "files": [
+    "bin",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "postinstall": "node ./bin/predihermes-skill.js guide --short",
+    "publish:check": "node ./bin/predihermes-skill.js publish-check"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "predihermes",
+    "hermes",
+    "osint",
+    "polymarket",
+    "mirofish",
+    "installer"
+  ]
+}
