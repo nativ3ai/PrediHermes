@@ -18,17 +18,38 @@ npx predihermes guide
 
 ## CLI
 
+Preferred command names:
+
 ```bash
-predihermes guide
-predihermes doctor
-predihermes install-hermes
-predihermes install-hermes --force
-predihermes install-hermes --repo https://github.com/nativ3ai/hermes-geopolitical-market-sim.git
-predihermes bootstrap-companions
-predihermes bootstrap-companions --dir ~/dev/predihermes
-predihermes verify-companions
-predihermes publish-check
-predihermes uninstall-hermes
+predihermes-installer guide
+predihermes-installer doctor
+predihermes-installer install-hermes
+predihermes-installer bootstrap-companions
+predihermes-installer verify-companions
+predihermes-installer publish-check
+```
+
+Compatibility aliases:
+
+```bash
+predihermes-skill <command>
+predihermes <command>
+```
+
+## Command name collision note
+
+Some environments already have a `predihermes` command pointing to the Python pipeline wrapper.
+If that happens, use either:
+
+```bash
+predihermes-installer <command>
+```
+
+or run from this repo:
+
+```bash
+npm run publish:check
+node ./bin/predihermes-skill.js <command>
 ```
 
 ## What it installs
@@ -61,20 +82,20 @@ Default destination:
 1. Check compatibility.
 
 ```bash
-predihermes doctor
+predihermes-installer doctor
 ```
 
 2. Install PrediHermes skill.
 
 ```bash
-predihermes install-hermes
+predihermes-installer install-hermes
 ```
 
 3. Optional: clone WorldOSINT + MiroFish companions.
 
 ```bash
-predihermes bootstrap-companions
-predihermes verify-companions
+predihermes-installer bootstrap-companions
+predihermes-installer verify-companions
 ```
 
 4. Add required keys in your Hermes runtime environment.
@@ -139,7 +160,7 @@ Optional:
 Before publishing to npm:
 
 ```bash
-predihermes publish-check
+npm run publish:check
 npm login
 npm version patch
 npm publish --access public

@@ -14,7 +14,8 @@
   "homepage": "https://github.com/nativ3ai/PrediHermes#readme",
   "bin": {
     "predihermes": "bin/predihermes-skill.js",
-    "predihermes-skill": "bin/predihermes-skill.js"
+    "predihermes-skill": "bin/predihermes-skill.js",
+    "predihermes-installer": "bin/predihermes-skill.js"
   },
   "files": [
     "bin",
